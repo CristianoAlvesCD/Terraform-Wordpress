@@ -1,6 +1,8 @@
+
 # Terraform WordPress
 
-Este repositório contém uma configuração do Terraform para provisionar uma instância do WordPress em uma infraestrutura AWS. A configuração inclui a criação de uma instância EC2, um banco de dados RDS e um bucket S3 para armazenamento de dados estáticos.
+
+Este repositório contém uma configuração do Terraform para provisionar uma instância do WordPress em uma infraestrutura AWS. A configuração inclui a criação de uma instância EC2, um banco de dados SQL.
 
 ## Índice
 
@@ -10,6 +12,7 @@ Este repositório contém uma configuração do Terraform para provisionar uma i
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Contribuindo](#contribuindo)
 - [Licença](#licença)
+- [Terraform WordPress English](#terraform-wordpress-english-version)
 
 ## Visão Geral
 
@@ -17,7 +20,6 @@ Este projeto utiliza o Terraform para automatizar o processo de provisionamento 
 
 - **Instância EC2**: Para hospedar o WordPress.
 - **Banco de Dados SQL**: Para gerenciar os dados do WordPress.
-- **Volume db_data**: Para armazenamento de arquivos estáticos do WordPress.
 
 A configuração foi desenvolvida para ser simples e reutilizável, permitindo a fácil criação e gestão do ambiente WordPress na AWS.
 
@@ -116,6 +118,132 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para m
    ```
    
 - Certifique-se de substituir main pelo nome da sua branch principal, se for diferente.
+
+
+
+## Terraform WordPress English version
+
+This repository contains a Terraform configuration for provisioning a WordPress instance on an AWS infrastructure. Setup includes creating an EC2 instance and SQL database.
+
+## Index
+
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [How to Use](#how-to-use)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+
+This project uses Terraform to automate the process of provisioning an infrastructure for WordPress. The configuration includes the following components:
+
+- **EC2 Instance**: To host WordPress.
+- **SQL Database**: To manage WordPress data.
+
+The configuration was developed to be simple and reusable, allowing for easy creation and management of the WordPress environment on AWS.
+
+## Prerequisites
+
+Before using this configuration, make sure you have the following tools installed:
+
+- [Terraform](https://www.terraform.io/downloads) - The infrastructure-as-code tool used to create and manage resources.
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) - Command-line tool for managing AWS resources.
+
+You also need to configure your AWS credentials. To do this, run:
+
+```bash
+aws configure
+```
+
+## How to use
+Follow these steps to provision infrastructure with Terraform:
+
+1. Clone the Repository:
+
+```bash
+git clone https://github.com/CristianoAlvesCD/Terraform-Wordpress.git
+cd Terraform-Wordpress
+```
+
+2. Configure your Variables:
+
+Edit the terraform.tfvars file to define the necessary variables, or you can create your own terraform.tfvars file with your custom settings.
+
+3. Initialize Terraform:
+
+```bash
+terraform init
+```
+
+4. View the Execution Plan:
+
+```bash
+terraform plans
+```
+
+5. Apply Settings:
+
+```bash
+terraform apply
+```
+- Confirm the application of changes when prompted.
+
+6. Access WordPress:
+
+After the process is complete, you can access the WordPress instance using the **public IP address of the EC2 instance**, which will be displayed after running the terraform apply command.
+
+## Project Structure
+
+The repository is structured as follows:
+
+- main.tf: Defines the provider (**AWS**) that will be used to create the resources.
+- ec2.tf: Defines infrastructure resources.
+- security-group.tf: Configures a security group for an EC2 instance.
+- outputs.tf: Definition of outputs that will be displayed after provisioning.
+
+## Contributing
+
+Contributions are welcome! If you want to contribute to this project, follow these steps:
+
+Fork the repository.
+Create a branch for your changes (git checkout -b my-change).
+Make your changes and commit (git commit -am 'Adding a new feature').
+Push to the branch (git push origin my-change).
+Create a Pull Request with a clear description of your changes.
+
+## License
+
+This project is licensed under the MIT license - see the LICENSE file for more details.
+
+
+### How to Add the File to the Repository
+
+1. **Create the `README.md` file:**
+
+ In your repository's root directory, create a new file called `README.md` and open it in a text editor.
+
+2. **Paste the Content:**
+
+ Paste the contents of the README provided above into the `README.md` file.
+
+3. **Add, Commit and Push to GitHub:**
+
+ Save the file and run the following commands to add, commit, and push your changes to the repository:
+
+ ```bash
+ git add README.md
+ git commit -m "Add README to repository with project information"
+ git push origin main
+ ```
+
+- Make sure to replace main with your main branch name if it is different.
+
+## Comments
+
+Be sure to add the image to the docs directory or adjust the path as needed.
+License: If you do not already have a LICENSE file, you can create a LICENSE file with the contents of the MIT License.
+The MIT license is a common permissive license, but you can choose another license as needed for your project.
 
 ## Observações
 
