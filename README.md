@@ -2,7 +2,7 @@
 # Terraform WordPress
 
 
-Este repositório contém uma configuração do Terraform para provisionar uma instância do WordPress em uma infraestrutura AWS. A configuração inclui a criação de uma instância EC2, um banco de dados SQL.
+Este repositório contém uma configuração do Terraform para provisionar uma instância do WordPress em uma infraestrutura AWS. A configuração inclui a criação de uma instância EC2 e um banco de dados SQL.
 
 ## Índice
 
@@ -10,7 +10,6 @@ Este repositório contém uma configuração do Terraform para provisionar uma i
 - [Pré-requisitos](#pré-requisitos)
 - [Como Usar](#como-usar)
 - [Estrutura do Projeto](#estrutura-do-projeto)
-- [Contribuindo](#contribuindo)
 - [Licença](#licença)
 - [Terraform WordPress English](#terraform-wordpress-english-version)
 
@@ -46,30 +45,26 @@ git clone https://github.com/CristianoAlvesCD/Terraform-Wordpress.git
 cd Terraform-Wordpress
 ```
 
-2. Configure suas Variáveis:
-
-Edite o arquivo terraform.tfvars para definir as variáveis necessárias, ou você pode criar seu próprio arquivo terraform.tfvars com suas configurações personalizadas.
-
-3. Inicialize o Terraform:
+2. Inicialize o Terraform:
 
 ```bash 
 terraform init
 ```
 
-4. Visualize o Plano de Execução:
+3. Visualize o Plano de Execução:
 
 ```bash
 terraform plan
 ```
 
-5. Aplique as Configurações:
+4. Aplique as Configurações:
 
 ```bash
 terraform apply
 ```
 - Confirme a aplicação das mudanças quando solicitado.
 
-6. Acesse o WordPress:
+5. Acesse o WordPress:
 
 Após a conclusão do processo, você pode acessar a instância do WordPress usando o endereço **IP público da instância EC2**, que será exibido após a execução do comando terraform apply.
 
@@ -82,15 +77,6 @@ O repositório está estruturado da seguinte forma:
 - security-group.tf: Configura um grupo de segurança (Security Group) para uma instância EC2.
 - outputs.tf: Definição dos outputs que serão exibidos após o provisionamento.
 
-## Contribuindo
-
-Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estes passos:
-
-Faça um fork do repositório.
-Crie uma branch para suas alterações (git checkout -b minha-alteracao).
-Faça suas alterações e commit (git commit -am 'Adicionando uma nova funcionalidade').
-Faça push para a branch (git push origin minha-alteracao).
-Crie um Pull Request com uma descrição clara das suas alterações.
 
 ## Licença
 
@@ -131,7 +117,6 @@ This repository contains a Terraform configuration for provisioning a WordPress 
 - [Prerequisites](#prerequisites)
 - [How to Use](#how-to-use)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Overview
@@ -166,30 +151,26 @@ git clone https://github.com/CristianoAlvesCD/Terraform-Wordpress.git
 cd Terraform-Wordpress
 ```
 
-2. Configure your Variables:
-
-Edit the terraform.tfvars file to define the necessary variables, or you can create your own terraform.tfvars file with your custom settings.
-
-3. Initialize Terraform:
+2. Initialize Terraform:
 
 ```bash
 terraform init
 ```
 
-4. View the Execution Plan:
+3. View the Execution Plan:
 
 ```bash
 terraform plans
 ```
 
-5. Apply Settings:
+4. Apply Settings:
 
 ```bash
 terraform apply
 ```
 - Confirm the application of changes when prompted.
 
-6. Access WordPress:
+5. Access WordPress:
 
 After the process is complete, you can access the WordPress instance using the **public IP address of the EC2 instance**, which will be displayed after running the terraform apply command.
 
@@ -202,15 +183,6 @@ The repository is structured as follows:
 - security-group.tf: Configures a security group for an EC2 instance.
 - outputs.tf: Definition of outputs that will be displayed after provisioning.
 
-## Contributing
-
-Contributions are welcome! If you want to contribute to this project, follow these steps:
-
-Fork the repository.
-Create a branch for your changes (git checkout -b my-change).
-Make your changes and commit (git commit -am 'Adding a new feature').
-Push to the branch (git push origin my-change).
-Create a Pull Request with a clear description of your changes.
 
 ## License
 
