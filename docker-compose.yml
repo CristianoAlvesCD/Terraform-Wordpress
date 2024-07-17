@@ -1,0 +1,38 @@
+# O arquivo 'docker-compose.yml' é um arquivo de configuração usado pelo Docker Compose 
+# para definir e gerenciar aplicativos compostos por múltiplos contêineres Docker.
+
+version: "3.8" # Versão do Docker Compose file format
+
+services: # Define os serviços que compõem o aplicativo
+
+  db: # Nome do serviço de banco de dados 
+    image: mariadb:10.6.4-focal # Imagem do Docker a ser usada
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes: # Define volumes para persistência de dados
+      - db_data:/var/lib/mysql
+    restart: always # Configura o contêiner para reiniciar automaticamente em caso de falha ou após reinicializações do Docker.
+    environment: # Define variáveis de ambiente para o serviço
+      - MYSQL_ROOT_PASSWORD=GAud4mZby8F3SD6P # Senha do usuário root
+      - MYSQL_DATABASE=wordpress # Nome do banco de dados
+      - MYSQL_USER=wordpress # Nome de usuário do banco de dados
+      - MYSQL_PASSWORD=wordpress # Senha do usuário do banco de dados
+    expose: # É usado para permitir que contêineres se comuniquem dentro da rede Docker, sem expor portas ao host.
+      - 3306
+      - 33060
+
+  wordpress: # Nome do serviço WordPress 
+    depends_on:
+      - db
+    image: wordpress:latest # Imagem do Docker para WordPress
+    ports: # Mapeia a porta 80 do contêiner para a porta 80 do host
+      - 80:80
+    restart: always
+    environment:
+      - WORDPRESS_DB_HOST=db # Endereço do serviço de banco de dados
+      - WORDPRESS_DB_USER=wordpress # Nome de usuário do banco de dados
+      - WORDPRESS_DB_PASSWORD=wordpress # Senha do banco de dados
+      - WORDPRESS_DB_NAME=wordpress # Nome do banco de dados
+
+# Volumes são definidos aqui
+volumes:
+  db_data:
