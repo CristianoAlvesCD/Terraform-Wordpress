@@ -8,7 +8,6 @@ Este repositório contém uma configuração do Terraform para provisionar uma i
 - [Pré-requisitos](#pré-requisitos)
 - [Como Usar](#como-usar)
 - [Estrutura do Projeto](#estrutura-do-projeto)
-- [Variáveis](#variáveis)
 - [Contribuindo](#contribuindo)
 - [Licença](#licença)
 
@@ -33,3 +32,93 @@ Você também precisa configurar suas credenciais da AWS. Para fazer isso, execu
 
 ```bash
 aws configure
+```
+
+## Como Usar
+Siga estes passos para provisionar a infraestrutura com Terraform:
+
+1. Clone o Repositório:
+
+```bash
+git clone https://github.com/CristianoAlvesCD/Terraform-Wordpress.git
+cd Terraform-Wordpress
+```
+
+2. Configure suas Variáveis:
+
+Edite o arquivo terraform.tfvars para definir as variáveis necessárias, ou você pode criar seu próprio arquivo terraform.tfvars com suas configurações personalizadas.
+
+3. Inicialize o Terraform:
+
+```bash 
+terraform init
+```
+
+4. Visualize o Plano de Execução:
+
+```bash
+terraform plan
+```
+
+5. Aplique as Configurações:
+
+```bash
+terraform apply
+```
+- Confirme a aplicação das mudanças quando solicitado.
+
+6. Acesse o WordPress:
+
+Após a conclusão do processo, você pode acessar a instância do WordPress usando o endereço **IP público da instância EC2**, que será exibido após a execução do comando terraform apply.
+
+## Estrutura do Projeto
+
+O repositório está estruturado da seguinte forma:
+
+- main.tf: Define o provedor (**AWS**)que será usado para criar os recursos.
+- ec2.tf:  Define os recursos da infraestrutura.
+- security-group.tf: Configura um grupo de segurança (Security Group) para uma instância EC2.
+- outputs.tf: Definição dos outputs que serão exibidos após o provisionamento.
+
+## Contribuindo
+
+Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estes passos:
+
+Faça um fork do repositório.
+Crie uma branch para suas alterações (git checkout -b minha-alteracao).
+Faça suas alterações e commit (git commit -am 'Adicionando uma nova funcionalidade').
+Faça push para a branch (git push origin minha-alteracao).
+Crie um Pull Request com uma descrição clara das suas alterações.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
+
+
+### Como Adicionar o Arquivo ao Repositório
+
+1. **Crie o arquivo `README.md`:**
+
+   No diretório raiz do seu repositório, crie um novo arquivo chamado `README.md` e abra-o em um editor de texto.
+
+2. **Cole o Conteúdo:**
+
+   Cole o conteúdo do README fornecido acima no arquivo `README.md`.
+
+3. **Adicione, Faça Commit e Envie para o GitHub:**
+
+   Salve o arquivo e execute os seguintes comandos para adicionar, fazer commit e enviar suas alterações para o repositório:
+
+   ```bash
+   git add README.md
+   git commit -m "Adiciona o README ao repositório com informações do projeto"
+   git push origin main
+   ```
+   
+- Certifique-se de substituir main pelo nome da sua branch principal, se for diferente.
+
+## Observações
+
+Certifique-se de adicionar a imagem ao diretório docs ou ajustar o caminho conforme necessário.
+Licença: Se você ainda não tiver um arquivo LICENSE, você pode criar um arquivo LICENSE com o conteúdo da licença MIT. 
+A licença MIT é uma licença permissiva comum, mas você pode escolher outra licença conforme necessário para seu projeto.
