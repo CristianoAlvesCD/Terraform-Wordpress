@@ -2,7 +2,7 @@
 # Terraform WordPress
 
 
-Este repositório contém uma configuração do Terraform para provisionar uma instância do WordPress em uma infraestrutura AWS. A configuração inclui a criação de uma instância EC2 e um banco de dados SQL.
+Este repositório contém uma configuração do Terraform para provisionar uma instância do WordPress e um Servidor Web em uma infraestrutura AWS. A configuração inclui a criação de uma instância EC2 e um banco de dados SQL.
 
 ## Índice
 
@@ -66,7 +66,7 @@ terraform apply
 
 5. Acesse o WordPress:
 
-Após a conclusão do processo, você pode acessar a instância do WordPress usando o endereço **IP público da instância EC2**, que será exibido após a execução do comando terraform apply.
+Após a conclusão do processo, você pode acessar a instância pelo protocolo (HTTP) tanto no WordPress na porta: 80 como no Servidor Web na porta:81 usando o endereço **IP público da instância EC2** , que será exibido após a execução do comando terraform apply.
 
 ## Estrutura do Projeto
 
