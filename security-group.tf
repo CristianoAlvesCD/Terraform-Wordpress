@@ -33,7 +33,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http_ipv4" {
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 80
   ip_protocol       = "tcp"
-  to_port           = 80
+  to_port           = 81
 }
 
 # Recurso do Security Group para permitir egress

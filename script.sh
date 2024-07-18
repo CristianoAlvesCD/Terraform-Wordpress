@@ -29,3 +29,6 @@ cd wordpress-docker-compose
 
 # Iniciando todos os serviços definidos em 'docker-compose.yml' em background.
 sudo docker-compose up -d
+
+# Iniciando um servidor web com um app a partir de uma imagem pública na porta: 81
+sudo docker run -dti --name web-server -p 81:80 cr1st0/meusite-bootcamp-devops:v1.0
